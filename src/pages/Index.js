@@ -19,7 +19,7 @@ function Index(props) {
       <Link to={`/${book._id}`}>
         <h1>{book.website}</h1>
       </Link>
-      <h3><a href={book.url}>Url</a></h3>
+      
     </div>
   ))}
 </div>
