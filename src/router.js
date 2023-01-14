@@ -7,13 +7,14 @@ import App from './App'
 import Show from './pages/Show'
 import Index from './pages/Index'
 import { bookLoader } from './loaders'
+import { createAction } from './actions'
 
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path="/" element={<App />}>
       <Route path="" element={<Index />} loader={bookLoader} />
       <Route path=":id" element={<Show />} />
-      <Route path="create" />
+      <Route path="create" action={createAction}/>
       <Route path="update/:id" />
       <Route path="delete/:id" />
     </Route>
