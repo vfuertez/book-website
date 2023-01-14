@@ -18,6 +18,12 @@ function Show(props) {
         <input type="input" name="url" placeholder="url" />
         <input type="submit" value="update" />
       </Form>
+
+      <h2>Delete Website</h2>
+      <Form action={`/delete/${book._id}`} method="post">
+        <input type="submit" value="delete" />
+      </Form>
+
         </div>
     )
   }
