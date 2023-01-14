@@ -6,11 +6,12 @@ import {
 import App from './App'
 import Show from './pages/Show'
 import Index from './pages/Index'
+import { bookLoader } from './loaders'
 
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path="/" element={<App />}>
-      <Route path="" element={<Index />} />
+      <Route path="" element={<Index />} loader={bookLoader} />
       <Route path=":id" element={<Show />} />
       <Route path="create" />
       <Route path="update/:id" />

@@ -1,5 +1,17 @@
+import { Link, useLoaderData } from "react-router-dom"
+
 function Index(props) {
-    return <h1>Index</h1>
-  }
+    const book = useLoaderData()
+
+
+   return book.map(book => (
+    <div key={book._id} className="book">
+      <Link to={`/${book._id}`}>
+        <h1>{book.website}</h1>
+      </Link>
+      <h3><a href={book.url}>Url</a></h3>
+    </div>
+  ))
+}
   
   export default Index
