@@ -6,3 +6,8 @@ export const bookLoader = async () => {
   return page
 }
 
+export const selectedBook = async ({params}) => {
+    const response = await fetch(URL + "/book/" + params.id )
+    const thisBook = await response.json()
+    return thisBook
+}
