@@ -1,17 +1,29 @@
-import { Link, useLoaderData } from "react-router-dom"
+import { Link, useLoaderData, Form } from "react-router-dom"
 
 function Index(props) {
     const book = useLoaderData()
 
 
-   return book.map(book => (
+   return (
+   <div>
+   <h2>List A Book</h2>
+      <Form action="/create" method="post">
+        <input type="input" name="website" placeholder="Book Title" />
+        <input type="input" name="url" placeholder="url" />
+        <input type="submit" value="List a book" />
+      </Form>
+
+
+   {book.map(book => (
     <div key={book._id} className="book">
       <Link to={`/${book._id}`}>
         <h1>{book.website}</h1>
       </Link>
       <h3><a href={book.url}>Url</a></h3>
     </div>
-  ))
+  ))}
+</div>
+)
 }
   
   export default Index
