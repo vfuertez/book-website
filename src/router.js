@@ -8,7 +8,7 @@ import Show from './pages/Show'
 import Index from './pages/Index'
 import { bookLoader } from './loaders'
 import { createAction } from './actions'
-import { updateAction } from './actions'
+import { updateAction, deleteAction } from './actions'
 import { selectedBook } from './loaders'
 
 const router = createBrowserRouter(
@@ -18,7 +18,7 @@ const router = createBrowserRouter(
       <Route path=":id" element={<Show />} loader={selectedBook} />
       <Route path="create" action={createAction}/>
       <Route path="update/:id" action={updateAction}/>
-      <Route path="delete/:id" />
+      <Route path="delete/:id" action={deleteAction}/>
     </Route>
   )
 )
